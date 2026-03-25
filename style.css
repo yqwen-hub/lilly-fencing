@@ -176,3 +176,7 @@ button[onclick="goBack()"] {
     text-align: left;
     color: white;
 }
+
+.profile-table + h2 {
+    margin-top: 60px;
+}
