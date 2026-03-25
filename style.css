@@ -56,3 +56,12 @@ h2 {
     font-size: 24px;
     color: #ddd;
 }
+
+.profile-pic {
+    display: block;
+    margin: 20px auto;
+    max-width: 300px;
+    width: 90%;
+    border-radius: 10px;
+}
+
