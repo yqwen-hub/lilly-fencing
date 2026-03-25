@@ -70,6 +70,7 @@ def main() -> None:
 
     print("Extracting...")
 
+    name = "Lillian Wen"
     birth_year = find(r"\b(2015)\b", profile_text)
     club = find(r"(Gold Fencing Club)", profile_text)
     weapon = "Foil"
@@ -88,6 +89,9 @@ def main() -> None:
 <h2>Profile</h2>
 
 <div class="profile-table">
+    <div class="profile-label">Name</div>
+    <div class="profile-value">{name}</div>
+
     <div class="profile-label">Birth Year</div>
     <div class="profile-value">{birth_year}</div>
 
