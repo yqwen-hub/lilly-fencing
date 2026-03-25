@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Lilly Profile</title>
     <link rel="stylesheet" href="style.css">
-
     <script>
         function goBack() {
             window.location.href = "videos.html";
         }
     </script>
-
 </head>
-
 <body>
 
 <div class="container">
 
-<h1>Lilly</h1>
+    <h1>Lilly</h1>
 
-<img src="lilly.png" class="profile-pic">
+    <img src="lilly.png" class="profile-pic" alt="Lilly">
 
-<br><br>
+    <div class="profile-info" style="max-width:700px; margin:30px auto; text-align:left; background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:24px;">
 
-<button onclick="goBack()" 
-style="background:#333; color:white; border:1px solid #555; padding:10px 16px; border-radius:6px; cursor:pointer;">
-    ← Back
-</button>
+        <!-- PROFILE_STATS_START -->
+        <p>Loading stats...</p>
+        <!-- PROFILE_STATS_END -->
+
+    </div>
+
+    <button onclick="goBack()"
+    style="background:#333; color:white; border:1px solid #555; padding:10px 16px; border-radius:6px; cursor:pointer;">
+        ← Back
+    </button>
 
 </div>
 
