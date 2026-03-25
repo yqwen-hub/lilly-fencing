@@ -65,3 +65,17 @@ h2 {
     border-radius: 10px;
 }
 
+.big-button {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.big-button:hover {
+    background: #444;
+}
