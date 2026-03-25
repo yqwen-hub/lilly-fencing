@@ -157,3 +157,22 @@ button[onclick="goBack()"] {
     padding: 16px 28px;
     border-radius: 10px;
 }
+
+.profile-table {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    row-gap: 8px;
+    column-gap: 12px;
+    font-size: 26px;
+}
+
+.profile-label {
+    font-weight: bold;
+    text-align: right;
+    color: #ddd;
+}
+
+.profile-value {
+    text-align: left;
+    color: white;
+}
