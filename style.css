@@ -134,3 +134,26 @@ button {
     }
 
 }
+
+.profile-info {
+    font-size: 30px;
+}
+
+.profile-info p {
+    font-size: 30px;
+}
+
+.profile-info h2 {
+    font-size: 36px;
+}
+
+button {
+    font-size: 26px;
+    padding: 16px 24px;
+}
+
+button[onclick="goBack()"] {
+    font-size: 26px;
+    padding: 16px 28px;
+    border-radius: 10px;
+}
