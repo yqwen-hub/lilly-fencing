@@ -79,3 +79,58 @@ h2 {
 .big-button:hover {
     background: #444;
 }
+
+/* ---------- profile card ---------- */
+
+.profile-info {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+}
+
+.profile-info p {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+/* ---------- back button ---------- */
+
+button {
+    font-size: 18px;
+    padding: 14px 22px;
+    border-radius: 8px;
+}
+
+/* ---------- mobile adjustments ---------- */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .profile-info {
+        font-size: 22px;
+    }
+
+    .profile-info p {
+        font-size: 22px;
+    }
+
+    .profile-info h2 {
+        font-size: 26px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 16px 26px;
+    }
+
+    .profile-pic {
+        max-width: 220px;
+    }
+
+}
