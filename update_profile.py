@@ -50,8 +50,18 @@ def parse_history_stats(history_text: str) -> tuple[str, str]:
     )
 
     if victories_match and losses_match and win_ratio_match:
-        season = f"{victories_match.group(1)} victories, {losses_match.group(1)} losses, {win_ratio_match.group(1)} win ratio"
-        all_time = f"{victories_match.group(2)} victories, {losses_match.group(2)} losses, {win_ratio_match.group(2)} win ratio"
+        season = (
+            f"{victories_match.group(1)} victories, "
+            f"{losses_match.group(1)} losses, "
+            f"{win_ratio_match.group(1)} win ratio"
+        )
+
+        all_time = (
+            f"{victories_match.group(2)} victories, "
+            f"{losses_match.group(2)} losses, "
+            f"{win_ratio_match.group(2)} win ratio"
+        )
+
         return season, all_time
 
     return "N/A", "N/A"
@@ -65,21 +75,40 @@ def main() -> None:
     strength_text = get_text(STRENGTH_URL)
 
     print("Saving debug files...")
-    Path("history_debug.txt").write_text(history_text, encoding="utf-8")
-    Path("strength_debug.txt").write_text(strength_text, encoding="utf-8")
+    Path("history_debug.txt").write_text(
+        history_text,
+        encoding="utf-8"
+    )
+    Path("strength_debug.txt").write_text(
+        strength_text,
+        encoding="utf-8"
+    )
 
     print("Extracting...")
 
     name = "Lillian Wen"
     birth_year = find(r"\b(2015)\b", profile_text)
-    club = find(r"(Gold Fencing Club)", profile_text)
+
+    # Lilly's current club
+    club = "Echo Fencing"
+
     weapon = "Foil"
 
     season, all_time = parse_history_stats(history_text)
 
-    de_strength = find(r"DE[^0-9]{0,50}(\d{3,4})", strength_text)
-    pool_strength = find(r"Pool[^0-9]{0,50}(\d{3,4})", strength_text)
+    de_strength = find(
+        r"Direct\s+elimination\s+(\d{3,4})",
+        strength_text
+    )
 
+    pool_strength = find(
+        r"Pool\s+(\d{3,4})",
+        strength_text
+    )
+
+    print("Name:", name)
+    print("Birth year:", birth_year)
+    print("Club:", club)
     print("Season:", season)
     print("All Time:", all_time)
     print("DE strength:", de_strength)
@@ -124,12 +153,17 @@ def main() -> None:
 
     updated_html = re.sub(
         r"<!-- PROFILE_STATS_START -->.*?<!-- PROFILE_STATS_END -->",
-        f"<!-- PROFILE_STATS_START -->\n{stats_html}\n<!-- PROFILE_STATS_END -->",
+        f"<!-- PROFILE_STATS_START -->\n"
+        f"{stats_html}\n"
+        f"<!-- PROFILE_STATS_END -->",
         html,
         flags=re.DOTALL,
     )
 
-    profile_path.write_text(updated_html, encoding="utf-8")
+    profile_path.write_text(
+        updated_html,
+        encoding="utf-8"
+    )
 
     print("Updated profile.html")
     print("Done.")
